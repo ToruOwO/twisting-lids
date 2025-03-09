@@ -1,0 +1,213 @@
+# used to create the object
+name: DualURBottle
+
+physics_engine: ${..physics_engine}
+
+# if given, will override the device setting in gym.
+env:
+  numEnvs: ${resolve_default:4096,${...num_envs}}
+  envSpacing: 1.5
+  episodeLength: 500
+  enableDebugVis: False
+
+  computeState: True    # for asymmetric training
+  fullState: False      # for asymmetric training. (added Jan21)
+
+  clipObservations: 10.0
+  clipActions: 1.0
+
+  startPositionNoise: 0.25
+  startRotationNoise: 0.785
+  frankaPositionNoise: 0.0
+  frankaRotationNoise: 0.0
+  frankaDofNoise: 0.25
+
+  aggregateMode: 3
+
+  dofVelocityScale: 0.1
+  distRewardScale: 0.1
+  rotRewardScale: 0.5
+  fingerDistRewardScale: 2.0
+  gripperDistRewardScale: 1.0
+
+  actionPenaltyScale: 0.01
+  objectDistRewardScale: 0.0
+  liftBonusRewardScale: 0.1
+  goalDistRewardScale: 0.0
+  goalBonusRewardScale: 0.0
+
+  controlFrequencyInv: 6
+
+  object_asset_root_folder: "bottle"
+
+  # set to True if you use camera sensors in the environment
+  enableCameraSensors: False
+
+  cube_scale: 1.0
+  brake_torque: -0.3
+  right_hand_only: False
+  use_mirrored_urdf: False  # for backward compatibility / debug
+  use_updated_urdf: True  # for backward compatibility / debug
+
+  # Initialization Setup
+  initializer: twist
+  init_setup:
+    obj_dof_friction: 0.1
+    joint_13_qpos: 1.167
+    joint_14_qpos: 0.75  # also used as the lower limit of joint 14
+
+  controller:
+    actionEMA: 0.75
+    controllerActionScale: 0.1
+    kp: 3.0
+    kd: 0.1
+
+  # Randomization Setup
+  randomizer: twist
+  randomization_setup:
+    observation_noise_scale: 0.005
+    hand_init_qpos_noise_scale: 0.05
+
+    # Initialization noises
+    object_init_pos_noise_x_scale: 0.02
+    object_init_pos_noise_y_scale: 0.02
+    object_init_pos_noise_z_scale: 0.005
+
+    object_init_quat_noise_x_scale: 0.0  # This is the rotation angle scale around x axis.
+    object_init_quat_noise_y_scale: 0.04  # This is the rotation angle scale around x axis.
+    object_init_quat_noise_z_scale: 0.75  # This is the rotation angle scale around z axis.
+
+    cube_pos_noise_scale: 0.02 # TODO(): Legacy?
+    cap_pos_noise_scale: 0.02 # TODO(): Legacy?
+
+    bottle_obs_shift_scale: 0.01
+    bottle_obs_shift_reset_prob: 0.05
+
+
+    scale_randomization_lower: 0.98
+    scale_randomization_upper: 1.02
+
+    mass_randomization_lower: 0.8
+    mass_randomization_upper: 1.2
+
+    mass_value_lower: 0.030
+    mass_value_upper: 0.150
+
+    randomize_mass_by_value: False
+
+    friction_randomization_lower: 0.75
+    friction_randomization_upper: 1.25
+
+    p_gain_lower: 0.8
+    p_gain_upper: 1.1
+    d_gain_lower: 0.7
+    d_gain_upper: 1.2
+
+    object_dof_friction_lower: 0.8
+    object_dof_friction_upper: 1.2
+
+    # latency modeling
+    frame_latency_prob: 0.1
+    action_drop_prob: 0.0
+    action_latency_prob: 0.1
+
+    # perstep noises
+    prev_target_noise_scale: 0.0
+    bottle_obs_noise_scale: 0.02
+    dofpos_noise_scale: 0.4
+    action_noise_scale: 0.2
+    separate_bottle_perstep_noise: False
+
+    # episode noises (active since jan19)
+    prev_target_episode_additive_noise_scale: 0.0
+    prev_target_episode_affine_noise_scale: 0.0
+
+    action_episode_additive_noise_scale: 0.0
+    action_episode_affine_noise_scale: 0.0
+
+    dofpos_episode_additive_noise_scale: 0.0
+    dofpos_episode_affine_noise_scale: 0.0
+
+    bottle_episode_additive_noise_scale: 0.0
+    bottle_episode_affine_noise_scale: 0.0
+
+  use_real_allegro_limit: True
+
+  # Reward Setup
+  rewarder: twist
+  reward_setup:
+    failure_penalty: -50.0
+    rotation_reward_scale: 500.0
+    cube_rotation_reward_scale: 1.0
+    action_penalty_scale: 0.001
+    left_action_penalty_scale: 3.0
+    right_action_penalty_scale: 1.0
+    distance_penalty_scale: 0.0
+    force_reward_scale: 10.0
+    distance_reward_scale: 0.0  # this is used for goal-conditioned task
+    reorient_reward_scale: 0.0  # this is used for goal-conditioned task
+    work_penalty_scale: 1.0
+    left_work_penalty_scale: 3.0
+    right_work_penalty_scale: 1.0
+    thumb_mult: 1.0
+    cap_mult: 1.0
+    grasp_reward_freq: 5  # unused
+
+    pose_diff_penalty_scale: 0.0  # 0.3 from HORA
+    drop_threshold: 0.4  # 1.15
+
+    angle_penalty_scale: 20.0
+    hand_init_pose_penalty: 0.0
+    finger_distance_reward_scale: 2.5
+    reach_goal_bonus: 200.0
+    rotate_axis: "z"
+    reset_by_z_angle: True
+
+    use_curriculum: False
+    screw_curriculum: [50_000_000, 120_000_000]
+    screw_curriculum_reward_scale: [0.0, 500.0]
+
+    cap_center_point: [0.70, 0.00]
+
+  randomization:
+    force_prob: 0.2
+    force_decay: 0.98
+    force_scale: 0.0  # use this as a boolean to turn on/off force randomization
+    force_scale_x: 10.0
+    force_scale_y: 5.0
+    force_scale_z: 0.5
+    force_decay_interval: 0.1
+    force_horizon_decay: 0.97
+
+  disable_gravity: True
+  n_stack_frame: 2
+  obs_setting:
+    no_dof_vel: True
+    no_obj_quat: True
+    no_obj_id: True
+    no_cap_base: False
+    no_obj_pos: False
+
+sim:
+  dt: 0.0166 # 1/60
+  substeps: 2
+  up_axis: "z"
+  use_gpu_pipeline: ${eq:${...pipeline},"gpu"}
+  gravity: [0.0, 0.0, -9.81]
+  physx:
+    num_threads: ${....num_threads}
+    solver_type: ${....solver_type}
+    use_gpu: ${contains:"cuda",${....sim_device}} # set to False to run on CPU
+    num_position_iterations: 8
+    num_velocity_iterations: 1
+    contact_offset: 0.002
+    rest_offset: 0.0
+    bounce_threshold_velocity: 0.2
+    max_depenetration_velocity: 1000.0
+    default_buffer_size_multiplier: 5.0
+    max_gpu_contact_pairs: 8388608
+    num_subscenes: ${....num_subscenes}
+    contact_collection: 0 # 0: CC_NEVER (don't collect contact info), 1: CC_LAST_SUBSTEP (collect only contacts on last substep), 2: CC_ALL_SUBSTEPS (broken - do not use!)
+
+task:
+  randomize: False

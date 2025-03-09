@@ -1,0 +1,732 @@
+<?xml version="1.0"?>
+<robot name="random_bottle">
+
+  <!-- Define the cap link -->
+  <link name="link1">
+    <visual>
+      <geometry>
+        <mesh filename="cap.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+       <material name="white">
+        <color rgba=".9 .9 .9 1"/>
+      </material>
+
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="cap.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.017049430005711172"/> <!-- You can adjust the mass as needed -->
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="5.9557803559862434e-06" ixy="0.0" ixz="0.0" iyy="5.9557803559862434e-06" iyz="0.0" izz="9.85496288682842e-06"/>
+    </inertial>
+  </link>
+
+    <link name="l10">
+    <visual>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+
+      <material name="red">
+        <color rgba="0.9 0.0 0.0 1"/>
+      </material>
+
+    </visual>
+
+    <inertial>
+      <mass value="0.0001"/> <!-- You can adjust the mass as needed -->
+      <origin rpy="0 0 0" xyz="0 0 -0.00"/> <!-- Offset by half of link1's height + 0.03m for the margin -->
+      <inertia ixx="0.000000003" ixy="0.0" ixz="0.0" iyy="0.0000003" iyz="0.0" izz="0.00000003"/>
+    </inertial>
+
+  </link>
+  <link name="l11">
+    <visual>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+
+      <material name="red">
+        <color rgba="0.9 0.0 0.0 1"/>
+      </material>
+
+    </visual>
+
+    <inertial>
+      <mass value="0.0001"/> <!-- You can adjust the mass as needed -->
+      <origin rpy="0 0 0" xyz="0 0 -0.00"/> <!-- Offset by half of link1's height + 0.03m for the margin -->
+      <inertia ixx="0.000000003" ixy="0.0" ixz="0.0" iyy="0.0000003" iyz="0.0" izz="0.00000003"/>
+    </inertial>
+
+  </link>
+  <link name="l12">
+    <visual>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+
+      <material name="red">
+        <color rgba="0.9 0.0 0.0 1"/>
+      </material>
+
+    </visual>
+
+    <inertial>
+      <mass value="0.0001"/> <!-- You can adjust the mass as needed -->
+      <origin rpy="0 0 0" xyz="0 0 -0.00"/> <!-- Offset by half of link1's height + 0.03m for the margin -->
+      <inertia ixx="0.000000003" ixy="0.0" ixz="0.0" iyy="0.0000003" iyz="0.0" izz="0.00000003"/>
+    </inertial>
+
+  </link>
+  <link name="l13">
+    <visual>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+
+      <material name="red">
+        <color rgba="0.9 0.0 0.0 1"/>
+      </material>
+
+    </visual>
+
+    <inertial>
+      <mass value="0.0001"/> <!-- You can adjust the mass as needed -->
+      <origin rpy="0 0 0" xyz="0 0 -0.00"/> <!-- Offset by half of link1's height + 0.03m for the margin -->
+      <inertia ixx="0.000000003" ixy="0.0" ixz="0.0" iyy="0.0000003" iyz="0.0" izz="0.00000003"/>
+    </inertial>
+
+  </link>
+  <link name="l10b">
+    <visual>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+
+      <material name="red">
+        <color rgba="0.9 0.0 0.0 1"/>
+      </material>
+
+    </visual>
+
+    <inertial>
+      <mass value="0.0001"/> <!-- You can adjust the mass as needed -->
+      <origin rpy="0 0 0" xyz="0 0 -0.00"/> <!-- Offset by half of link1's height + 0.03m for the margin -->
+      <inertia ixx="0.000000003" ixy="0.0" ixz="0.0" iyy="0.0000003" iyz="0.0" izz="0.00000003"/>
+    </inertial>
+
+  </link>
+  <link name="l11b">
+    <visual>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+
+      <material name="red">
+        <color rgba="0.9 0.0 0.0 1"/>
+      </material>
+
+    </visual>
+
+    <inertial>
+      <mass value="0.0001"/> <!-- You can adjust the mass as needed -->
+      <origin rpy="0 0 0" xyz="0 0 -0.00"/> <!-- Offset by half of link1's height + 0.03m for the margin -->
+      <inertia ixx="0.000000003" ixy="0.0" ixz="0.0" iyy="0.0000003" iyz="0.0" izz="0.00000003"/>
+    </inertial>
+
+  </link>
+  <link name="l12b">
+    <visual>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+
+      <material name="red">
+        <color rgba="0.9 0.0 0.0 1"/>
+      </material>
+
+    </visual>
+
+    <inertial>
+      <mass value="0.0001"/> <!-- You can adjust the mass as needed -->
+      <origin rpy="0 0 0" xyz="0 0 -0.00"/> <!-- Offset by half of link1's height + 0.03m for the margin -->
+      <inertia ixx="0.000000003" ixy="0.0" ixz="0.0" iyy="0.0000003" iyz="0.0" izz="0.00000003"/>
+    </inertial>
+
+  </link>
+  <link name="l13b">
+    <visual>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+
+      <material name="red">
+        <color rgba="0.9 0.0 0.0 1"/>
+      </material>
+
+    </visual>
+
+    <inertial>
+      <mass value="0.0001"/> <!-- You can adjust the mass as needed -->
+      <origin rpy="0 0 0" xyz="0 0 -0.00"/> <!-- Offset by half of link1's height + 0.03m for the margin -->
+      <inertia ixx="0.000000003" ixy="0.0" ixz="0.0" iyy="0.0000003" iyz="0.0" izz="0.00000003"/>
+    </inertial>
+
+  </link>
+  <link name="l20">
+    <visual>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+
+      <material name="red">
+        <color rgba="0.0 0.9 0.0 1"/>
+      </material>
+
+    </visual>
+
+    <inertial>
+      <mass value="0.0001"/> <!-- You can adjust the mass as needed -->
+      <origin rpy="0 0 0" xyz="0 0 -0.00"/> <!-- Offset by half of link1's height + 0.03m for the margin -->
+      <inertia ixx="0.000000003" ixy="0.0" ixz="0.0" iyy="0.0000003" iyz="0.0" izz="0.00000003"/>
+    </inertial>
+
+  </link>
+  <link name="l21">
+    <visual>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+
+      <material name="red">
+        <color rgba="0.0 0.9 0.0 1"/>
+      </material>
+
+    </visual>
+
+    <inertial>
+      <mass value="0.0001"/> <!-- You can adjust the mass as needed -->
+      <origin rpy="0 0 0" xyz="0 0 -0.00"/> <!-- Offset by half of link1's height + 0.03m for the margin -->
+      <inertia ixx="0.000000003" ixy="0.0" ixz="0.0" iyy="0.0000003" iyz="0.0" izz="0.00000003"/>
+    </inertial>
+
+  </link>
+  <link name="l22">
+    <visual>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+
+      <material name="red">
+        <color rgba="0.0 0.9 0.0 1"/>
+      </material>
+
+    </visual>
+
+    <inertial>
+      <mass value="0.0001"/> <!-- You can adjust the mass as needed -->
+      <origin rpy="0 0 0" xyz="0 0 -0.00"/> <!-- Offset by half of link1's height + 0.03m for the margin -->
+      <inertia ixx="0.000000003" ixy="0.0" ixz="0.0" iyy="0.0000003" iyz="0.0" izz="0.00000003"/>
+    </inertial>
+
+  </link>
+  <link name="l23">
+    <visual>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+
+      <material name="red">
+        <color rgba="0.0 0.9 0.0 1"/>
+      </material>
+
+    </visual>
+
+    <inertial>
+      <mass value="0.0001"/> <!-- You can adjust the mass as needed -->
+      <origin rpy="0 0 0" xyz="0 0 -0.00"/> <!-- Offset by half of link1's height + 0.03m for the margin -->
+      <inertia ixx="0.000000003" ixy="0.0" ixz="0.0" iyy="0.0000003" iyz="0.0" izz="0.00000003"/>
+    </inertial>
+
+  </link>
+  <link name="l24">
+    <visual>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+
+      <material name="red">
+        <color rgba="0.0 0.9 0.0 1"/>
+      </material>
+
+    </visual>
+
+    <inertial>
+      <mass value="0.0001"/> <!-- You can adjust the mass as needed -->
+      <origin rpy="0 0 0" xyz="0 0 -0.00"/> <!-- Offset by half of link1's height + 0.03m for the margin -->
+      <inertia ixx="0.000000003" ixy="0.0" ixz="0.0" iyy="0.0000003" iyz="0.0" izz="0.00000003"/>
+    </inertial>
+
+  </link>
+  <link name="l25">
+    <visual>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+
+      <material name="red">
+        <color rgba="0.0 0.9 0.0 1"/>
+      </material>
+
+    </visual>
+
+    <inertial>
+      <mass value="0.0001"/> <!-- You can adjust the mass as needed -->
+      <origin rpy="0 0 0" xyz="0 0 -0.00"/> <!-- Offset by half of link1's height + 0.03m for the margin -->
+      <inertia ixx="0.000000003" ixy="0.0" ixz="0.0" iyy="0.0000003" iyz="0.0" izz="0.00000003"/>
+    </inertial>
+
+  </link>
+  <link name="l26">
+    <visual>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+
+      <material name="red">
+        <color rgba="0.0 0.9 0.0 1"/>
+      </material>
+
+    </visual>
+
+    <inertial>
+      <mass value="0.0001"/> <!-- You can adjust the mass as needed -->
+      <origin rpy="0 0 0" xyz="0 0 -0.00"/> <!-- Offset by half of link1's height + 0.03m for the margin -->
+      <inertia ixx="0.000000003" ixy="0.0" ixz="0.0" iyy="0.0000003" iyz="0.0" izz="0.00000003"/>
+    </inertial>
+
+  </link>
+  <link name="l27">
+    <visual>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+
+      <material name="red">
+        <color rgba="0.0 0.9 0.0 1"/>
+      </material>
+
+    </visual>
+
+    <inertial>
+      <mass value="0.0001"/> <!-- You can adjust the mass as needed -->
+      <origin rpy="0 0 0" xyz="0 0 -0.00"/> <!-- Offset by half of link1's height + 0.03m for the margin -->
+      <inertia ixx="0.000000003" ixy="0.0" ixz="0.0" iyy="0.0000003" iyz="0.0" izz="0.00000003"/>
+    </inertial>
+
+  </link>
+  <link name="l30">
+    <visual>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+
+      <material name="red">
+        <color rgba="0.0 0.9 0.0 1"/>
+      </material>
+
+    </visual>
+
+    <inertial>
+      <mass value="0.0001"/> <!-- You can adjust the mass as needed -->
+      <origin rpy="0 0 0" xyz="0 0 -0.00"/> <!-- Offset by half of link1's height + 0.03m for the margin -->
+      <inertia ixx="0.000000003" ixy="0.0" ixz="0.0" iyy="0.0000003" iyz="0.0" izz="0.00000003"/>
+    </inertial>
+
+  </link>
+  <link name="l31">
+    <visual>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+
+      <material name="red">
+        <color rgba="0.0 0.9 0.0 1"/>
+      </material>
+
+    </visual>
+
+    <inertial>
+      <mass value="0.0001"/> <!-- You can adjust the mass as needed -->
+      <origin rpy="0 0 0" xyz="0 0 -0.00"/> <!-- Offset by half of link1's height + 0.03m for the margin -->
+      <inertia ixx="0.000000003" ixy="0.0" ixz="0.0" iyy="0.0000003" iyz="0.0" izz="0.00000003"/>
+    </inertial>
+
+  </link>
+  <link name="l32">
+    <visual>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+
+      <material name="red">
+        <color rgba="0.0 0.9 0.0 1"/>
+      </material>
+
+    </visual>
+
+    <inertial>
+      <mass value="0.0001"/> <!-- You can adjust the mass as needed -->
+      <origin rpy="0 0 0" xyz="0 0 -0.00"/> <!-- Offset by half of link1's height + 0.03m for the margin -->
+      <inertia ixx="0.000000003" ixy="0.0" ixz="0.0" iyy="0.0000003" iyz="0.0" izz="0.00000003"/>
+    </inertial>
+
+  </link>
+  <link name="l33">
+    <visual>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+
+      <material name="red">
+        <color rgba="0.0 0.9 0.0 1"/>
+      </material>
+
+    </visual>
+
+    <inertial>
+      <mass value="0.0001"/> <!-- You can adjust the mass as needed -->
+      <origin rpy="0 0 0" xyz="0 0 -0.00"/> <!-- Offset by half of link1's height + 0.03m for the margin -->
+      <inertia ixx="0.000000003" ixy="0.0" ixz="0.0" iyy="0.0000003" iyz="0.0" izz="0.00000003"/>
+    </inertial>
+
+  </link>
+  <link name="l34">
+    <visual>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+
+      <material name="red">
+        <color rgba="0.0 0.9 0.0 1"/>
+      </material>
+
+    </visual>
+
+    <inertial>
+      <mass value="0.0001"/> <!-- You can adjust the mass as needed -->
+      <origin rpy="0 0 0" xyz="0 0 -0.00"/> <!-- Offset by half of link1's height + 0.03m for the margin -->
+      <inertia ixx="0.000000003" ixy="0.0" ixz="0.0" iyy="0.0000003" iyz="0.0" izz="0.00000003"/>
+    </inertial>
+
+  </link>
+  <link name="l35">
+    <visual>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+
+      <material name="red">
+        <color rgba="0.0 0.9 0.0 1"/>
+      </material>
+
+    </visual>
+
+    <inertial>
+      <mass value="0.0001"/> <!-- You can adjust the mass as needed -->
+      <origin rpy="0 0 0" xyz="0 0 -0.00"/> <!-- Offset by half of link1's height + 0.03m for the margin -->
+      <inertia ixx="0.000000003" ixy="0.0" ixz="0.0" iyy="0.0000003" iyz="0.0" izz="0.00000003"/>
+    </inertial>
+
+  </link>
+  <link name="l36">
+    <visual>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+
+      <material name="red">
+        <color rgba="0.0 0.9 0.0 1"/>
+      </material>
+
+    </visual>
+
+    <inertial>
+      <mass value="0.0001"/> <!-- You can adjust the mass as needed -->
+      <origin rpy="0 0 0" xyz="0 0 -0.00"/> <!-- Offset by half of link1's height + 0.03m for the margin -->
+      <inertia ixx="0.000000003" ixy="0.0" ixz="0.0" iyy="0.0000003" iyz="0.0" izz="0.00000003"/>
+    </inertial>
+
+  </link>
+  <link name="l37">
+    <visual>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+
+      <material name="red">
+        <color rgba="0.0 0.9 0.0 1"/>
+      </material>
+
+    </visual>
+
+    <inertial>
+      <mass value="0.0001"/> <!-- You can adjust the mass as needed -->
+      <origin rpy="0 0 0" xyz="0 0 -0.00"/> <!-- Offset by half of link1's height + 0.03m for the margin -->
+      <inertia ixx="0.000000003" ixy="0.0" ixz="0.0" iyy="0.0000003" iyz="0.0" izz="0.00000003"/>
+    </inertial>
+
+  </link>
+
+
+  <link name="hint">
+    <visual>
+      <geometry>
+        <box size="0.005 0.005 0.07"/> <!-- 9cm x 9cm x 6cm -->
+      </geometry>
+       <material name="blue">
+        <color rgba=".0 .0 .9 1"/>
+      </material>
+    </visual>
+
+    <inertial>
+      <mass value="0.0001"/> <!-- You can adjust the mass as needed -->
+      <origin rpy="0 0 0" xyz="0 0 -0.00"/> <!-- Offset by half of link1's height + 0.03m for the margin -->
+      <inertia ixx="0.000000003" ixy="0.0" ixz="0.0" iyy="0.0000003" iyz="0.0" izz="0.00000003"/>
+    </inertial>
+
+
+  </link>
+
+  <!-- Define the base link -->
+  <link name="link2">
+    <visual>
+      <geometry>
+        <mesh filename="base.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="red">
+        <color rgba=".9 .3 .3 1"/>
+      </material>
+
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="base.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.05523497056927232"/> <!-- You can adjust the mass as needed -->
+      <origin rpy="0 0 0" xyz="0 0 -0.00"/> <!-- Offset by half of link1's height + 0.03m for the margin -->
+      <inertia ixx="4.333483454472187e-05" ixy="0.0" ixz="0.0" iyy="4.333483454472187e-05" iyz="0.0" izz="4.8676699813483434e-05"/>
+    </inertial>
+  </link>
+
+
+
+  <link name="brake">
+   <visual>
+      <geometry>
+        <box size="0.02 0.02 0.005"/> <!-- 6cm x 6cm x 2cm -->
+      </geometry>
+       <material name="gray">
+        <color rgba=".5 .5 .5 1"/>
+      </material>
+
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.02 0.02 0.005"/> <!-- 6cm x 6cm x 2cm -->
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.005"/> <!-- You can adjust the mass as needed -->
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="0.00018" ixy="0.0" ixz="0.0" iyy="0.00018" iyz="0.0" izz="0.00018"/>
+    </inertial>
+  </link>
+
+  <!-- Define the joint connecting link1 and link2 as a revolute joint along z-axis -->
+  <joint name="fix_joint" type="fixed">
+    <parent link="link1"/>
+    <child link="hint"/>
+    <origin rpy="0 0 0" xyz="0 0.01 0.03"/> <!-- Offset by half of link1's height for the margin -->
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <!-- Define the joint connecting link1 and link2 as a revolute joint along z-axis -->
+  <joint name="brake_joint" type="prismatic">
+    <parent link="link2"/>
+    <child link="brake"/>
+    <origin rpy="0 0 0" xyz="0 0 0.05902375301890593"/> <!-- Offset by half of link1's height for the margin -->
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.02" upper="0.02" />
+    <!-- <dynamics damping="0.0" friction="0.0"/> -->
+  </joint>
+
+
+  <joint name="b_joint" type="revolute">
+    <parent link="link2"/>
+    <child link="link1"/>
+    <origin rpy="0 0 0" xyz="0 0 0.04712108334542734"/> <!-- Offset by half of link1's height for the margin -->
+    <axis xyz="0 0 1"/>
+    <!-- No joint limits -->
+    <dynamics damping="0.0" friction="0.0"/>
+  </joint>
+
+
+  <!-- marker -->
+    <joint name="jl10" type="fixed">
+    <parent link="link1"/>
+    <child link="l10"/>
+    <origin rpy="0 0 0" xyz="0.0 0.034000676820319056 0.008070800902043578"/> <!-- Offset by half of link1's height for the margin -->
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="jl11" type="fixed">
+    <parent link="link1"/>
+    <child link="l11"/>
+    <origin rpy="0 0 0" xyz="0.02404210882247695 0.024042109466682775 0.008070800902043578"/> <!-- Offset by half of link1's height for the margin -->
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="jl12" type="fixed">
+    <parent link="link1"/>
+    <child link="l12"/>
+    <origin rpy="0 0 0" xyz="0.03400067682031904 9.110446192214293e-10 0.008070800902043578"/> <!-- Offset by half of link1's height for the margin -->
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="jl13" type="fixed">
+    <parent link="link1"/>
+    <child link="l13"/>
+    <origin rpy="0 0 0" xyz="0.02404211011088858 -0.024042108178271106 0.008070800902043578"/> <!-- Offset by half of link1's height for the margin -->
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="jl10b" type="fixed">
+    <parent link="link1"/>
+    <child link="l10b"/>
+    <origin rpy="0 0 0" xyz="1.822089238442858e-09 -0.03400067682031901 0.008070800902043578"/> <!-- Offset by half of link1's height for the margin -->
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="jl11b" type="fixed">
+    <parent link="link1"/>
+    <child link="l11b"/>
+    <origin rpy="0 0 0" xyz="-0.024042107534065237 -0.02404211075509439 0.008070800902043578"/> <!-- Offset by half of link1's height for the margin -->
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="jl12b" type="fixed">
+    <parent link="link1"/>
+    <child link="l12b"/>
+    <origin rpy="0 0 0" xyz="-0.034000676820318945 -2.7331338425649516e-09 0.008070800902043578"/> <!-- Offset by half of link1's height for the margin -->
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="jl13b" type="fixed">
+    <parent link="link1"/>
+    <child link="l13b"/>
+    <origin rpy="0 0 0" xyz="-0.024042111399300153 0.024042106889859367 0.008070800902043578"/> <!-- Offset by half of link1's height for the margin -->
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="jl20" type="fixed">
+    <parent link="link2"/>
+    <child link="l20"/>
+    <origin rpy="0 0 0" xyz="0.0 0.041982519413017644 0.019272650007256403"/> <!-- Offset by half of link1's height for the margin -->
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="jl21" type="fixed">
+    <parent link="link2"/>
+    <child link="l21"/>
+    <origin rpy="0 0 0" xyz="0.029686123770522335 0.029686124565958958 0.019272650007256403"/> <!-- Offset by half of link1's height for the margin -->
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="jl22" type="fixed">
+    <parent link="link2"/>
+    <child link="l22"/>
+    <origin rpy="0 0 0" xyz="0.04198251941301763 1.1249172660507648e-09 0.019272650007256403"/> <!-- Offset by half of link1's height for the margin -->
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="jl23" type="fixed">
+    <parent link="link2"/>
+    <child link="l23"/>
+    <origin rpy="0 0 0" xyz="0.02968612536139556 -0.02968612297508569 0.019272650007256403"/> <!-- Offset by half of link1's height for the margin -->
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="jl24" type="fixed">
+    <parent link="link2"/>
+    <child link="l24"/>
+    <origin rpy="0 0 0" xyz="2.2498345321015284e-09 -0.04198251941301758 0.019272650007256403"/> <!-- Offset by half of link1's height for the margin -->
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="jl25" type="fixed">
+    <parent link="link2"/>
+    <child link="l25"/>
+    <origin rpy="0 0 0" xyz="-0.029686122179649013 -0.02968612615683216 0.019272650007256403"/> <!-- Offset by half of link1's height for the margin -->
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="jl26" type="fixed">
+    <parent link="link2"/>
+    <child link="l26"/>
+    <origin rpy="0 0 0" xyz="-0.04198251941301751 -3.374751779508307e-09 0.019272650007256403"/> <!-- Offset by half of link1's height for the margin -->
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="jl27" type="fixed">
+    <parent link="link2"/>
+    <child link="l27"/>
+    <origin rpy="0 0 0" xyz="-0.02968612695226871 0.02968612138421233 0.019272650007256403"/> <!-- Offset by half of link1's height for the margin -->
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="jl30" type="fixed">
+    <parent link="link2"/>
+    <child link="l30"/>
+    <origin rpy="0 0 0" xyz="0.0 0.041982519413017644 -0.006424216669085468"/> <!-- Offset by half of link1's height for the margin -->
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="jl31" type="fixed">
+    <parent link="link2"/>
+    <child link="l31"/>
+    <origin rpy="0 0 0" xyz="0.029686123770522335 0.029686124565958958 -0.006424216669085468"/> <!-- Offset by half of link1's height for the margin -->
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="jl32" type="fixed">
+    <parent link="link2"/>
+    <child link="l32"/>
+    <origin rpy="0 0 0" xyz="0.04198251941301763 1.1249172660507648e-09 -0.006424216669085468"/> <!-- Offset by half of link1's height for the margin -->
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="jl33" type="fixed">
+    <parent link="link2"/>
+    <child link="l33"/>
+    <origin rpy="0 0 0" xyz="0.02968612536139556 -0.02968612297508569 -0.006424216669085468"/> <!-- Offset by half of link1's height for the margin -->
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="jl34" type="fixed">
+    <parent link="link2"/>
+    <child link="l34"/>
+    <origin rpy="0 0 0" xyz="2.2498345321015284e-09 -0.04198251941301758 -0.006424216669085468"/> <!-- Offset by half of link1's height for the margin -->
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="jl35" type="fixed">
+    <parent link="link2"/>
+    <child link="l35"/>
+    <origin rpy="0 0 0" xyz="-0.029686122179649013 -0.02968612615683216 -0.006424216669085468"/> <!-- Offset by half of link1's height for the margin -->
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="jl36" type="fixed">
+    <parent link="link2"/>
+    <child link="l36"/>
+    <origin rpy="0 0 0" xyz="-0.04198251941301751 -3.374751779508307e-09 -0.006424216669085468"/> <!-- Offset by half of link1's height for the margin -->
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="jl37" type="fixed">
+    <parent link="link2"/>
+    <child link="l37"/>
+    <origin rpy="0 0 0" xyz="-0.02968612695226871 0.02968612138421233 -0.006424216669085468"/> <!-- Offset by half of link1's height for the margin -->
+    <axis xyz="0 0 1"/>
+  </joint>
+
+
+
+</robot>

@@ -1,0 +1,47 @@
+seed: ${..seed}
+algo: PPO
+
+network:
+  mlp:
+    units: [512, 512, 512]
+  value_mlp:
+    units: [512, 512, 512]
+
+  separate_value_mlp: True
+  fix_sigma: True
+
+ppo:
+  name: ${resolve_default:DualURBottle${...task.env.rewarder}-${...tag},${...experiment}}
+  multi_gpu: ${...multi_gpu}
+  normalize_input: True
+  normalize_value: True
+  value_bootstrap: True
+  num_actors: ${...task.env.numEnvs}
+  reward_scale_value: 0.001
+  clip_value_loss: False
+  normalize_advantage: True
+  gamma: 0.99
+  tau: 0.95
+  learning_rate: 5e-4
+  weight_decay: 0.0
+  lr_schedule: kl  # 'fixed' | 'linear' | 'kl' | 'cos'
+  kl_threshold: 0.02
+  save_best_after: 500
+  save_frequency: 200
+  save_video_freq: 200
+  eval_freq: 50
+  num_video_envs: 0
+  grad_norm: 1.0
+  entropy_coef: 0.0
+  truncate_grads: True
+  e_clip: 0.2
+  horizon_length: 8
+  minibatch_size: 8192
+  mini_epochs: 8
+  critic_coef: 4
+  clip_value: True
+  bounds_loss_coef: 0.005
+  max_agent_steps: 1000000000
+
+  # Asymmetric training
+  asymmetric: True
